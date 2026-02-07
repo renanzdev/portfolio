@@ -1,0 +1,518 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+/* Configurando tema dark monocromático seguindo design brief */
+.dark {
+  --background: oklch(0.145 0 0); /* #121212 - quase preto */
+  --foreground: oklch(0.985 0 0); /* #ffffff - branco */
+  --card: oklch(0.205 0 0); /* #1f1f1f - cinza escuro */
+  --card-foreground: oklch(0.985 0 0); /* #e0e0e0 - cinza claro */
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0); /* #3a3a3a - cinza médio */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-bricolage);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition-timing-function: cubic-bezier(
+      0.25,
+      0.46,
+      0.45,
+      0.94
+    ); /* easeOutQuart */
+    transition-duration: 0.4s;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-optical-sizing: auto;
+    font-variation-settings: "wght" 400;
+  }
+
+  /* Sistema de tipografia fluida com proporções matemáticas perfeitas */
+  /* Baseado em viewport: 375px (mobile) até 1920px (desktop) */
+  /* Fórmula: clamp(min, preferred, max) onde preferred = min + (max - min) * ((100vw - 375px) / (1920 - 375)) */
+
+  h1 {
+    font-size: clamp(
+      1.5rem,
+      1.5rem + 1.5 * ((100vw - 23.4375rem) / 96.5625),
+      3rem
+    );
+    line-height: clamp(1.1, 1.1 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.2);
+    letter-spacing: clamp(
+      -0.03em,
+      -0.03em + 0.01 * ((100vw - 23.4375rem) / 96.5625),
+      -0.02em
+    );
+  }
+
+  h2 {
+    font-size: clamp(
+      1.25rem,
+      1.25rem + 1 * ((100vw - 23.4375rem) / 96.5625),
+      2.25rem
+    );
+    line-height: clamp(1.2, 1.2 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.3);
+    letter-spacing: clamp(
+      -0.02em,
+      -0.02em + 0.01 * ((100vw - 23.4375rem) / 96.5625),
+      -0.01em
+    );
+  }
+
+  h3 {
+    font-size: clamp(
+      1.125rem,
+      1.125rem + 0.75 * ((100vw - 23.4375rem) / 96.5625),
+      1.875rem
+    );
+    line-height: clamp(1.3, 1.3 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.4);
+  }
+
+  h4 {
+    font-size: clamp(
+      1rem,
+      1rem + 0.5 * ((100vw - 23.4375rem) / 96.5625),
+      1.5rem
+    );
+    line-height: clamp(1.4, 1.4 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.5);
+  }
+
+  p {
+    font-size: clamp(
+      0.875rem,
+      0.875rem + 0.25 * ((100vw - 23.4375rem) / 96.5625),
+      1.125rem
+    );
+    line-height: clamp(1.5, 1.5 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.6);
+  }
+
+  /* Classes utilitárias para tipografia fluida */
+  .text-fluid-xs {
+    font-size: clamp(
+      0.75rem,
+      0.75rem + 0.125 * ((100vw - 23.4375rem) / 96.5625),
+      0.875rem
+    );
+  }
+
+  .text-fluid-sm {
+    font-size: clamp(
+      0.875rem,
+      0.875rem + 0.125 * ((100vw - 23.4375rem) / 96.5625),
+      1rem
+    );
+  }
+
+  .text-fluid-base {
+    font-size: clamp(
+      1rem,
+      1rem + 0.125 * ((100vw - 23.4375rem) / 96.5625),
+      1.125rem
+    );
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(
+      1.125rem,
+      1.125rem + 0.375 * ((100vw - 23.4375rem) / 96.5625),
+      1.5rem
+    );
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(
+      1.25rem,
+      1.25rem + 0.5 * ((100vw - 23.4375rem) / 96.5625),
+      1.75rem
+    );
+  }
+
+  .text-fluid-2xl {
+    font-size: clamp(
+      1.5rem,
+      1.5rem + 0.75 * ((100vw - 23.4375rem) / 96.5625),
+      2.25rem
+    );
+  }
+
+  .text-fluid-3xl {
+    font-size: clamp(
+      1.875rem,
+      1.875rem + 1.125 * ((100vw - 23.4375rem) / 96.5625),
+      3rem
+    );
+  }
+
+  /* Espaçamentos fluidos proporcionais */
+  .spacing-fluid-xs {
+    padding: clamp(
+      0.25rem,
+      0.25rem + 0.25 * ((100vw - 23.4375rem) / 96.5625),
+      0.5rem
+    );
+  }
+
+  .spacing-fluid-sm {
+    padding: clamp(
+      0.5rem,
+      0.5rem + 0.5 * ((100vw - 23.4375rem) / 96.5625),
+      1rem
+    );
+  }
+
+  .spacing-fluid-md {
+    padding: clamp(
+      0.75rem,
+      0.75rem + 0.75 * ((100vw - 23.4375rem) / 96.5625),
+      1.5rem
+    );
+  }
+
+  .spacing-fluid-lg {
+    padding: clamp(1rem, 1rem + 1 * ((100vw - 23.4375rem) / 96.5625), 2rem);
+  }
+
+  .spacing-fluid-xl {
+    padding: clamp(
+      1.5rem,
+      1.5rem + 1.5 * ((100vw - 23.4375rem) / 96.5625),
+      3rem
+    );
+  }
+
+  /* Gaps fluidos */
+  .gap-fluid-xs {
+    gap: clamp(
+      0.25rem,
+      0.25rem + 0.25 * ((100vw - 23.4375rem) / 96.5625),
+      0.5rem
+    );
+  }
+
+  .gap-fluid-sm {
+    gap: clamp(0.5rem, 0.5rem + 0.5 * ((100vw - 23.4375rem) / 96.5625), 1rem);
+  }
+
+  .gap-fluid-md {
+    gap: clamp(
+      0.75rem,
+      0.75rem + 0.75 * ((100vw - 23.4375rem) / 96.5625),
+      1.5rem
+    );
+  }
+
+  .gap-fluid-lg {
+    gap: clamp(1rem, 1rem + 1 * ((100vw - 23.4375rem) / 96.5625), 2rem);
+  }
+}
+
+/* Adicionando animações customizadas e efeitos especiais */
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+    transform: skewX(-15deg) scale(1);
+  }
+  50% {
+    transform: skewX(-15deg) scale(1.02);
+  }
+  100% {
+    background-position: 200% 0;
+    transform: skewX(-15deg) scale(1);
+  }
+}
+
+.gsap-fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.gsap-scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.gsap-slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Melhorando animações existentes */
+.pulse-green {
+  animation: pulse-green 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.float {
+  animation: float 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Melhorando efeitos de hover e transições */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+}
+
+.card-glow:hover::before {
+  left: 100%;
+}
+
+.card-glow:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Efeitos de micro-interações */
+.micro-bounce {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.micro-bounce:hover {
+  transform: scale(1.04) translateY(-2px);
+}
+
+.micro-bounce:active {
+  transform: scale(0.96);
+  transition-duration: 0.1s;
+}
+
+/* Animações de entrada mais suaves */
+.fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Adicionando novas classes para transições buttery smooth */
+.transition-buttery {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-buttery-fast {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-buttery-slow {
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.hover-glow {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+@theme {
+  --breakpoint-xs: 30rem;
+}
