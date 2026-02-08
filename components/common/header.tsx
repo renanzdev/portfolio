@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { useRef } from "react";
 import { AvatarImage } from "@radix-ui/react-avatar";
+import { ModeToggle } from "@/components/common/mode-toggle";
 import avatarImage from "../../public/avatar.png";
 
 interface HeaderProps {
@@ -137,6 +138,9 @@ export function Header({ id }: HeaderProps) {
                   />
                 </a>
               </Button>
+
+              <ModeToggle />
+
               <Button
                 variant="ghost"
                 size="sm"

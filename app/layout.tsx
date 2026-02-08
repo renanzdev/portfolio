@@ -1,4 +1,3 @@
-import type React from "react";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
@@ -7,6 +6,7 @@ import {
   OrganizationStructuredData,
   PortfolioStructuredData,
 } from "@/components/common/structured-data";
+import { ThemeProvider } from "@/components/common/theme-provider"; // <--- IMPORTANTE
 
 import ogImage from "../public/og-image.png";
 
@@ -14,7 +14,7 @@ const BASE_URLS = [
   "https://eduardoaugusto.squareweb.app",
   "https://eduardoaugusto.is-a.dev",
 ];
-const BASE_URL = BASE_URLS[0]; // principal
+const BASE_URL = BASE_URLS[0];
 const OG_IMAGE_URL = ogImage.src;
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -100,17 +100,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="dark">
+    // 1. Removi "className='dark'" e adicionei suppressHydrationWarning
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         {BASE_URLS.map((url) => (
           <link key={url} rel="canonical" href={url} />
         ))}
       </head>
       <body className={`${bricolageGrotesque.variable} font-sans antialiased`}>
-        <PersonStructuredData />
-        <OrganizationStructuredData />
-        <PortfolioStructuredData />
-        {children}
+        {/* 2. Envolvi o conteúdo com o ThemeProvider */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PersonStructuredData />
+          <OrganizationStructuredData />
+          <PortfolioStructuredData />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
