@@ -119,7 +119,7 @@ export function TechStackCard() {
     <BaseCard
       title="Stack Tecnológica"
       icon={Code}
-      className="lg:text-2xl"
+      className="lg:text-2xl h-full"
       id="tech-stack-card"
     >
       <div className="space-y-6">

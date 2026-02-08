@@ -83,7 +83,7 @@ export function ServicesCard() {
     <BaseCard
       title="Competências"
       icon={Globe}
-      className="lg:text-2xl"
+      className="lg:text-2xl h-full"
       id="services-card"
     >
       <div className="space-y-6">

@@ -39,26 +39,26 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
       {/* Main content */}
       <main className="container mx-auto px-4 py-8 max-w-7xl" id="main-content">
         <div
-          className="cards-container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12"
+          className="cards-container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12 items-stretch"
           id="cards-section"
         >
           <div
             id="about-card-container"
             ref={(ref) => setCardsRef(ref, 0)}
-            className="opacity-0"
+            className="opacity-0 h-full"
           >
             <AboutCard />
           </div>
           <div
             ref={(ref) => setCardsRef(ref, 1)}
-            className="col-span-1 opacity-0"
+            className="col-span-1 opacity-0 h-full"
             id="tech-stack-card-container"
           >
             <TechStackCard />
           </div>
           <div
             ref={(ref) => setCardsRef(ref, 2)}
-            className="col-span-1 opacity-0"
+            className="col-span-1 opacity-0 h-full"
             id="services-card-container"
           >
             <ServicesCard />

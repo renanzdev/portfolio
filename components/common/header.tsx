@@ -113,8 +113,6 @@ export function Header({ id }: HeaderProps) {
               </a>
             </Button>
 
-            {/* Links das redes sociais */}
-            <div className="flex gap-fluid-xs">
               <Button
                 variant="ghost"
                 size="sm"
@@ -125,72 +123,28 @@ export function Header({ id }: HeaderProps) {
                 asChild
               >
                 <a
-                  href="https://instagram.com/renann7d"
+                  href="https://www.linkedin.com/in/renanzdev/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Instagram
-                    style={{
-                      width: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                      height: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                    }}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)"
+                    height="clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
                     className="text-muted-foreground hover:text-foreground transition-colors"
-                  />
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.768 0-1.003.784-1.768 1.75-1.768.966 0 1.75.784 1.75 1.768 0 1.024-.787 1.768-1.75 1.768zm13.5 11.268h-3v-5.604c0-1.337-.026-3.062-1.867-3.062-1.868 0-2.154 1.459-2.154 2.965v5.701h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.839-1.562 3.037 0 3.6 2 3.6 4.594v5.601z" />
+                  </svg>
                 </a>
               </Button>
 
               <ModeToggle />
 
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hover:scale-110 transition-transform text-muted-foreground hover:text-foreground"
-                style={{
-                  padding: `clamp(0.375rem, 0.375rem + 0.125 * ((100vw - 23.4375rem) / 96.5625), 0.5rem)`,
-                }}
-                asChild
-              >
-                <a
-                  href="https://twitter.com/#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter
-                    style={{
-                      width: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                      height: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                    }}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hover:scale-110 transition-transform text-muted-foreground hover:text-foreground"
-                style={{
-                  padding: `clamp(0.375rem, 0.375rem + 0.125 * ((100vw - 23.4375rem) / 96.5625), 0.5rem)`,
-                }}
-                asChild
-              >
-                <a
-                  href="https://youtube.com/@"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Youtube
-                    style={{
-                      width: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                      height: `clamp(0.75rem, 0.75rem + 0.25 * ((100vw - 23.4375rem) / 96.5625), 1rem)`,
-                    }}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  />
-                </a>
-              </Button>
             </div>
           </div>
         </div>
-      </div>
     </header>
   );
 }

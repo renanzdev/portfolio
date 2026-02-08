@@ -2,7 +2,7 @@
 
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-Custom-blue)](LICENSE.md)
 
-Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar minhas habilidades, projetos e experiência como desenvolvedor web front-end.
+Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar minhas habilidades, projetos e experiência como desenvolvedor Full-stack.
 
 **URLs:**
 
