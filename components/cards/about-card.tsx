@@ -27,7 +27,7 @@ export function AboutCard() {
             splitType={SplitTypesEnum.words}
             wrapper="p"
             text="Especializado no desenvolvimento de sistemas críticos, como gateways de pagamento e integrações financeiras, uno robustez no Backend com experiências fluidas no Frontend. Desde 2022, utilizo tecnologia e IA para transformar desafios complexos em produtos digitais seguros e eficientes."
-            className="text-card-foreground leading-relaxed text-pretty"
+            className="text-card-foreground leading-relaxed text-pretty text-sm sm:text-base"
           />
 
           <div className="space-y-3">

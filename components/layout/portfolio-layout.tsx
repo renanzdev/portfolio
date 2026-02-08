@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { Header } from "@/components/common";
 import { AboutCard, TechStackCard, ServicesCard } from "@/components/cards";
-import { ContactSection } from "@/components/sections";
+import { ContactSection, HeroSection } from "@/components/sections"; 
 import { Footer } from "@/components/common";
 import { useScrollListAnimation } from "@/hooks/use-scroll-list-animation";
 
@@ -36,12 +36,16 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
       {/* Header full-width */}
       <Header id="portfolio-header" />
 
-      {/* Main content */}
+      {/* Hero Section - A entrada animada */}
+      <HeroSection />
+
+      {/* Main content - Os cards */}
       <main className="container mx-auto px-4 py-8 max-w-7xl" id="main-content">
         <div
           className="cards-container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12 items-stretch"
           id="cards-section"
         >
+          {/* Card Sobre */}
           <div
             id="about-card-container"
             ref={(ref) => setCardsRef(ref, 0)}
@@ -49,6 +53,8 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
           >
             <AboutCard />
           </div>
+
+          {/* Card Stack */}
           <div
             ref={(ref) => setCardsRef(ref, 1)}
             className="col-span-1 opacity-0 h-full"
@@ -56,6 +62,8 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
           >
             <TechStackCard />
           </div>
+
+          {/* Card Serviços/Competências */}
           <div
             ref={(ref) => setCardsRef(ref, 2)}
             className="col-span-1 opacity-0 h-full"
