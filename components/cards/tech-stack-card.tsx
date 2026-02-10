@@ -3,7 +3,7 @@ import { BaseCard } from "@/components/base";
 import {
   SiJavascript, SiPhp, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
   SiHtml5, SiNodedotjs, SiMysql, SiMongodb, SiPrisma, SiRedis, SiGit,
-  SiVite, SiDocker, SiLinux
+  SiVite, SiDocker, SiLinux, SiLaravel, SiNginx, SiApache, SiPostman, SiComposer
 } from "react-icons/si";
 import { AnimatedList } from "@/components/common/animated-list";
 
@@ -15,14 +15,13 @@ export function TechStackCard() {
       { id: "ts", name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
       { id: "js", name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
       { id: "tailwind", name: "Tailwind", icon: SiTailwindcss, color: "text-[#06B6D4]" },
-      { id: "html", name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
+      { id: "vite", name: "Vite", icon: SiVite, color: "text-[#646CFF]" },
     ],
     backend: [
       { id: "node", name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
       { id: "php", name: "PHP", icon: SiPhp, color: "text-[#777BB4]" },
+      { id: "laravel", name: "Laravel", icon: SiLaravel, color: "text-[#9C1B1B]" },
       { id: "mysql", name: "MySQL", icon: SiMysql, color: "text-[#4479A1]" },
-      { id: "mongo", name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
-      { id: "prisma", name: "Prisma", icon: SiPrisma, color: "text-foreground" },
       { id: "redis", name: "Redis", icon: SiRedis, color: "text-[#DC382D]" }
     ],
     tools: [
@@ -30,6 +29,10 @@ export function TechStackCard() {
       { id: "docker", name: "Docker", icon: SiDocker, color: "text-[#2496ED]" },
       { id: "linux", name: "Linux", icon: SiLinux, color: "text-[#FCC624]" },
       { id: "vite", name: "Vite", icon: SiVite, color: "text-[#646CFF]" },
+      { id: "nginx", name: "Nginx", icon: SiNginx, color: "text-[#009639]" },
+      { id: "apache", name: "Apache", icon: SiApache, color: "text-[#446C9A]" },
+      { id: "postman", name: "Postman", icon: SiPostman, color: "text-[#FF6C37]" },
+      { id: "composer", name: "Composer", icon: SiComposer, color: "text-[#8D6748]" }
     ],
   };
 
