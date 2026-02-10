@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =========================================
+   VARIÁVEIS DE COR (OKLCH - High Gamut)
+   ========================================= */
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -37,19 +40,17 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  color-scheme: light; 
+  color-scheme: light;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(0.145 0 0); /* Quase preto */
+  --foreground: oklch(0.985 0 0); /* Branco */
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(
-    0.985 0 0
-  ); 
+  --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -120,7 +121,8 @@
 }
 
 @layer base {
-  body,
+  /* FIX CRÍTICO: Removi 'body' desta lista. 
+     Aplicar transição global no body causa bugs de renderização de texto e cor. */
   .card,
   button,
   a,
@@ -143,6 +145,7 @@
     font-variation-settings: "wght" 400;
   }
 
+  /* Tipografia Fluida (Mantida) */
   h1 {
     font-size: clamp(
       1.5rem,
@@ -198,6 +201,7 @@
     line-height: clamp(1.5, 1.5 + 0.1 * ((100vw - 23.4375rem) / 96.5625), 1.6);
   }
 
+  /* Classes utilitárias fluídas */
   .text-fluid-xs {
     font-size: clamp(
       0.75rem,
@@ -302,6 +306,7 @@
   }
 }
 
+/* Animações e Efeitos */
 @keyframes gradient-xy {
   0% {
     background-position: 0% 50%;
@@ -376,12 +381,13 @@
   animation: shimmer 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
+/* Scrollbar Personalizada */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--muted);
-} 
+  background: var(--background);
+}
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 4px;
@@ -390,6 +396,7 @@
   background: var(--muted-foreground);
 }
 
+/* Efeitos de Interação */
 .card-glow {
   position: relative;
   overflow: hidden;

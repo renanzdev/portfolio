@@ -3,7 +3,9 @@
 import { useRef } from "react";
 import { Header } from "@/components/common";
 import { AboutCard, TechStackCard, ServicesCard } from "@/components/cards";
-import { ContactSection, HeroSection } from "@/components/sections"; 
+import { ContactSection, HeroSection } from "@/components/sections";
+// Importando a nova seção de projetos
+import { ProjectsSection } from "@/components/sections/projects-section";
 import { Footer } from "@/components/common";
 import { useScrollListAnimation } from "@/hooks/use-scroll-list-animation";
 
@@ -30,19 +32,23 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen bg-background text-foreground relative selection:bg-primary/20"
       id={id}
     >
-      {/* Header full-width */}
-      <Header id="portfolio-header" />
+      <div className="fixed inset-0 -z-10 h-full w-full bg-background">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px]"></div>
 
-      {/* Hero Section - A entrada animada */}
+        <div className="absolute left-0 right-0 top-[-10%] h-250 w-250 rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#3b82f615,transparent)]"></div>
+
+        <div className="absolute bottom-0 right-0 h-200 w-200 rounded-full bg-[radial-gradient(circle_800px_at_100%_200px,#a855f710,transparent)]"></div>
+      </div>
+
+      <Header id="portfolio-header" />
       <HeroSection />
 
-      {/* Main content - Os cards */}
-      <main className="container mx-auto px-4 py-8 max-w-7xl" id="main-content">
+      <main className="container mx-auto px-4 py-8 max-w-7xl relative z-10" id="main-content">
         <div
-          className="cards-container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12 items-stretch"
+          className="cards-container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-24 items-stretch"
           id="cards-section"
         >
           {/* Card Sobre */}
@@ -74,13 +80,17 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
         </div>
       </main>
 
-      {/* Seção de contato full-width */}
-      <div className="contact-section" id="contact-section">
+      <div className="relative z-10" id="projects-section">
+        <ProjectsSection />
+      </div>
+
+      <div className="contact-section relative z-10" id="contact-section">
         <ContactSection />
       </div>
 
-      {/* Footer */}
-      <Footer id="portfolio-footer" />
+      <div className="relative z-10">
+        <Footer id="portfolio-footer" />
+      </div>
     </div>
   );
 }
