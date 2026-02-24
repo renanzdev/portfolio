@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { Header } from "@/components/common";
 import { AboutCard, TechStackCard, ServicesCard } from "@/components/cards";
 import { ContactSection, HeroSection } from "@/components/sections";
-// Importando a nova seção de projetos
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { ExperienceSection } from "@/components/sections/experience-section";
 import { Footer } from "@/components/common";
 import { useScrollListAnimation } from "@/hooks/use-scroll-list-animation";
 
@@ -79,6 +79,11 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
           </div>
         </div>
       </main>
+
+      {/* Experience / Timeline Section */}
+      <div className="relative z-10" id="experience-section-wrapper">
+        <ExperienceSection />
+      </div>
 
       <div className="relative z-10" id="projects-section">
         <ProjectsSection />

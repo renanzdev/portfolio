@@ -3,7 +3,7 @@
 import { useRef, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Code2, ExternalLink, Github, Layers, Target } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Github, Layers } from "lucide-react";
 import { Button, Badge } from "@/components/ui/components";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -17,8 +17,8 @@ const projects = [
         title: "Gateway de Pagamentos Inteligente",
         description: "Gateway de pagamentos Full Stack construído do zero, com arquitetura multi-tenant, suporte a Cash In/Out, split de pagamentos e integração com múltiplos PSPs via APIs REST v1.",
         image: "/projects/project-11.png",
-        tags: ["JavaScript","PHP", "MySQL", "HTML", "APIs REST", "VPS", "Webhooks"],
-        demoLink: "https://kryonpay.com", 
+        tags: ["JavaScript", "PHP", "MySQL", "HTML", "APIs REST", "VPS", "Webhooks"],
+        demoLink: "https://kryonpay.com",
         codeLink: "https://github.com/renanzdev",
         featured: true,
     },
@@ -99,6 +99,7 @@ export function ProjectsSection() {
         <section
             ref={sectionRef}
             className="relative min-h-[90vh] py-24 overflow-hidden bg-background/50"
+            id="projects-section"
         >
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/5 via-background to-background -z-10" />
             <div
@@ -110,7 +111,7 @@ export function ProjectsSection() {
 
             <div className="container mx-auto px-4 max-w-7xl relative z-10 h-full flex flex-col justify-center">
                 <div className="max-w-2xl mx-auto text-center mb-16 space-y-4">
-                    <h4 className="projects-header-text text-sm font-bold uppercase tracking-widest bg-clip-text text-transparent bg-linear-to-r from-primary to-blue-400 flex items-center justify-center gap-2">
+                    <h4 className="projects-header-text text-sm font-bold uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400 flex items-center justify-center gap-2">
                         <Layers className="w-4 h-4 text-primary" />
                         Portfólio Selecionado
                     </h4>
@@ -129,7 +130,7 @@ export function ProjectsSection() {
                     <Button
                         variant="outline"
                         size="icon"
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/50 backdrop-blur-md border-white/10 hover:bg-primary/20 hover:border-primary/50 transition-all opacity-0 group-hover/carousel:opacity-100 -translate-x-4 group-hover/carousel:translate-x-0 duration-300 hidden md:flex"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/50 backdrop-blur-md border-black/10 dark:border-white/10 hover:bg-primary/20 hover:border-primary/50 transition-all opacity-0 group-hover/carousel:opacity-100 -translate-x-4 group-hover/carousel:translate-x-0 duration-300 hidden md:flex"
                         onClick={scrollPrev}
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -137,7 +138,7 @@ export function ProjectsSection() {
                     <Button
                         variant="outline"
                         size="icon"
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/50 backdrop-blur-md border-white/10 hover:bg-primary/20 hover:border-primary/50 transition-all opacity-0 group-hover/carousel:opacity-100 translate-x-4 group-hover/carousel:translate-x-0 duration-300 hidden md:flex"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/50 backdrop-blur-md border-black/10 dark:border-white/10 hover:bg-primary/20 hover:border-primary/50 transition-all opacity-0 group-hover/carousel:opacity-100 translate-x-4 group-hover/carousel:translate-x-0 duration-300 hidden md:flex"
                         onClick={scrollNext}
                     >
                         <ChevronRight className="w-6 h-6" />
@@ -145,12 +146,12 @@ export function ProjectsSection() {
 
                     <div className="overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing" ref={emblaRef}>
                         <div className="flex touch-pan-y py-8 -ml-6">
-                            {projects.map((project, index) => (
+                            {projects.map((project) => (
                                 <div
                                     key={project.id}
                                     className="flex-[0_0_90%] md:flex-[0_0_60%] lg:flex-[0_0_45%] min-w-0 pl-6 relative"
                                 >
-                                    <div className="group h-112.5 md:h-137.5 rounded-4xl overflow-hidden relative border border-white/10 bg-card/30 shadow-2xl perspective-1000 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(var(--primary),0.15)]">
+                                    <div className="group h-112.5 md:h-137.5 rounded-4xl overflow-hidden relative border border-black/10 dark:border-white/10 bg-card/30 shadow-2xl shadow-black/5 dark:shadow-black/20 perspective-1000 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(var(--primary),0.15)]">
                                         <div className="absolute inset-0 bg-muted/20 transition-transform duration-700 group-hover:scale-105">
                                             <Image
                                                 src={project.image}
@@ -160,32 +161,31 @@ export function ProjectsSection() {
                                             />
                                         </div>
 
-                                        <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent opacity-90 transition-opacity duration-500" />
                                         <div className="absolute inset-0 p-8 flex flex-col justify-end transition-all duration-500 translate-y-4 group-hover:translate-y-0">
 
-                                            {/* Tags/Badges */}
                                             <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
                                                 {project.tags.slice(0, 3).map((tag) => (
-                                                    <Badge key={tag} variant="secondary" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-xs border-white/5">
+                                                    <Badge key={tag} variant="secondary" className="bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-md text-xs border-black/5 dark:border-white/5 text-foreground">
                                                         {tag}
                                                     </Badge>
                                                 ))}
                                                 {project.tags.length > 3 && (
-                                                    <Badge variant="outline" className="text-xs border-white/10">+ {project.tags.length - 3}</Badge>
+                                                    <Badge variant="outline" className="text-xs border-black/10 dark:border-white/10 text-foreground">+ {project.tags.length - 3}</Badge>
                                                 )}
                                             </div>
 
-                                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 drop-shadow-md">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 drop-shadow-sm">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-white/80 leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-4 group-hover:translate-y-0 line-clamp-3">
+                                            <p className="text-muted-foreground leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-4 group-hover:translate-y-0 line-clamp-3">
                                                 {project.description}
                                             </p>
 
                                             <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300 translate-y-4 group-hover:translate-y-0">
                                                 {project.demoLink && (
-                                                    <Button 
-                                                        size="sm" 
+                                                    <Button
+                                                        size="sm"
                                                         className="rounded-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
                                                         asChild
                                                     >
@@ -195,10 +195,10 @@ export function ProjectsSection() {
                                                     </Button>
                                                 )}
                                                 {project.codeLink && (
-                                                    <Button 
-                                                        size="sm" 
-                                                        variant="outline" 
-                                                        className="rounded-full gap-2 bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 text-white"
+                                                    <Button
+                                                        size="sm"
+                                                        variant="outline"
+                                                        className="rounded-full gap-2 bg-black/5 dark:bg-white/5 backdrop-blur-md border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 text-foreground"
                                                         asChild
                                                     >
                                                         <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
