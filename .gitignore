@@ -28,3 +28,16 @@ next-env.d.ts
 
 # Other
 deploy.zip
+
+# IDEs e Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Logs do pnpm (caso não queira apenas o debug)
+pnpm-debug.log*
