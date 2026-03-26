@@ -33,9 +33,9 @@ const projects = [
     },
     {
         id: 3,
-        title: "AI Content Generator SaaS",
-        description: "Aplicação SaaS que utiliza a API da OpenAI para gerar posts de blog, copy para redes sociais e e-mails de marketing otimizados para SEO.",
-        image: "/projects/project-3.jpg",
+        title: "Landing Page | RyzenPay",
+        description: "Landing page para a plataforma RyzenPay, desenvolvida com Next.js e Tailwind CSS.",
+        image: "/projects/project-3.png",
         tags: ["OpenAI API", "Node.js", "Express", "MongoDB", "Stripe"],
         demoLink: "https://demo.com",
         codeLink: null,

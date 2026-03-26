@@ -14,6 +14,7 @@ import {
     Cpu,
     ArrowUpRight,
     Star,
+    Zap,
 } from "lucide-react";
 import { Badge } from "@/components/ui/components";
 import AnimatedText, { SplitTypesEnum } from "@/components/common/animated-text";
@@ -23,27 +24,44 @@ gsap.registerPlugin(ScrollTrigger);
 const experiences = [
     {
         id: 1,
-        role: "Desenvolvedor Full Stack",
-        company: "KryonPay",
-        companyUrl: "https://kryonpay.com",
-        period: "2023 – Presente",
+        role: "Arquiteto de Sistemas & Desenvolvedor Full Stack",
+        company: "RyzenPay",
+        companyUrl: "https://app.ryzenpay.com.br",
+        period: "2026 – Presente",
         type: "Full-time",
         location: "Remoto",
         icon: Cpu,
         accent: "#8b5cf6",
-        accentBg: "rgba(139,92,246,0.12)",
+        accentBg: "rgba(139,92,246,0.10)",
         accentBorder: "rgba(139,92,246,0.25)",
         description:
-            "Desenvolvimento do core do gateway de pagamentos: arquitetura multi-tenant, split de pagamentos, Cash In/Out e integração com múltiplos PSPs via APIs REST.",
-        tags: ["JavaScript", "PHP", "MySQL", "APIs REST", "Webhooks", "VPS"],
+            "Liderança técnica completa do gateway de pagamentos: projetei a arquitetura multi-tenant do zero, provisionei e configurei a VPS com aaPanel, conectei Cloudflare e domínios, estruturei ambientes de staging/produção com deploy automatizado via SSH. Responsável pelo desenvolvimento integral — frontend, backend, integrações com múltiplos PSPs via REST, split de pagamentos, Cash In/Out, webhooks e documentação técnica para clientes corporativos.",
+        tags: ["JavaScript", "PHP", "MySQL", "REST APIs", "Webhooks", "VPS", "DevOps", "Cloudflare", "aaPanel"],
         highlight: true,
     },
     {
         id: 2,
+        role: "Arquiteto & Desenvolvedor Full Stack Solo",
+        company: "KryonPay",
+        companyUrl: "https://kryonpay.com",
+        period: "11/2025 – 01/2026",
+        type: "Freelancer",
+        location: "Remoto",
+        icon: Code2,
+        accent: "#3b82f6",
+        accentBg: "rgba(59,130,246,0.10)",
+        accentBorder: "rgba(59,130,246,0.22)",
+        description:
+            "Construção integral do gateway de pagamentos do zero: projetei a arquitetura multi-tenant, provisionei e configurei a VPS com aaPanel, conectei Cloudflare e domínios, estruturei pipelines de deploy via SSH com ambientes isolados de teste e produção. Desenvolvi frontend, backend, integrações com PSPs via REST, split de pagamentos e Cash In/Out — atuando como único responsável técnico do projeto.",
+        tags: ["JavaScript", "PHP", "MySQL", "REST APIs", "Webhooks", "VPS", "DevOps", "Cloudflare", "aaPanel"],
+        highlight: false,
+    },
+    {
+        id: 3,
         role: "Desenvolvedor Frontend",
         company: "Freelancer",
         companyUrl: null,
-        period: "2022 – 2023",
+        period: "02/2025 – 10/2025",
         type: "Freelance",
         location: "Remoto",
         icon: Code2,
@@ -56,7 +74,7 @@ const experiences = [
         highlight: false,
     },
     {
-        id: 3,
+        id: 4,
         role: "Início na Programação",
         company: "Autodidata",
         companyUrl: null,
@@ -157,17 +175,10 @@ export function ExperienceSection() {
             className="relative py-24 overflow-hidden"
             id="experience-section"
         >
-            {/* Noise + radial bg — same as ProjectsSection */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/5 via-background to-background -z-10" />
-            <div
-                className="absolute inset-0 opacity-[0.02] pointer-events-none -z-10 mix-blend-overlay"
-                style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                }}
-            />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
-                {/* ── Header — mirrors ProjectsSection ── */}
+                {/* ── Header ── */}
                 <div className="max-w-2xl mx-auto text-center mb-16 space-y-4">
                     <h4 className="exp-eyebrow text-sm font-bold uppercase tracking-widest bg-clip-text text-transparent bg-linear-to-r from-primary to-blue-400 flex items-center justify-center gap-2">
                         <Briefcase className="w-4 h-4 text-primary" />
@@ -183,7 +194,7 @@ export function ExperienceSection() {
 
                     <AnimatedText
                         wrapper="p"
-                        text="Uma jornada de crescimento constante, do zero ao desenvolvimento de sistemas financeiros críticos."
+                        text="Do zero ao desenvolvimento de sistemas financeiros críticos — arquitetura, infraestrutura e produto."
                         splitType={SplitTypesEnum.words}
                         className="text-muted-foreground text-lg leading-relaxed"
                     />
@@ -193,10 +204,10 @@ export function ExperienceSection() {
                 <div className="exp-timeline relative">
                     {/* Vertical connector line (desktop only) */}
                     <div
-                        className="hidden md:block absolute left-[31px] top-8 bottom-8 w-px overflow-hidden"
+                        className="hidden md:block absolute left-7.75 top-8 bottom-8 w-px overflow-hidden"
                         aria-hidden="true"
                     >
-                        <div className="timeline-track w-full h-full bg-gradient-to-b from-violet-500/50 via-blue-500/30 to-emerald-500/20" />
+                        <div className="timeline-track w-full h-full bg-linear-to-b from-violet-500/50 via-blue-500/30 to-emerald-500/20" />
                     </div>
 
                     <div className="flex flex-col gap-6">
@@ -228,21 +239,13 @@ export function ExperienceSection() {
                                     </div>
 
                                     {/* ── Card ── */}
-                                    <div className="group/exp relative overflow-hidden rounded-3xl border border-white/10 bg-card/30 p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(var(--primary),0.12)]">
-
-                                        {/* Hover glow overlay */}
-                                        <div
-                                            className="absolute inset-0 opacity-0 group-hover/exp:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                            style={{
-                                                background: `radial-gradient(ellipse 80% 60% at 0% 0%, ${exp.accent}0f, transparent 70%)`,
-                                            }}
-                                        />
+                                    <div className="group/exp relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 shadow-sm backdrop-blur-sm transition-all duration-500 hover:border-border hover:-translate-y-1 hover:bg-card/70 hover:shadow-lg">
 
                                         {/* Bottom accent line on hover */}
                                         <div
-                                            className="absolute bottom-0 left-0 h-[2px] w-0 group-hover/exp:w-full transition-[width] duration-700"
+                                            className="absolute bottom-0 left-0 h-0.5 w-0 group-hover/exp:w-full transition-[width] duration-700"
                                             style={{
-                                                background: `linear-gradient(to right, ${exp.accent}80, transparent)`,
+                                                background: `linear-gradient(to right, ${exp.accent}60, transparent)`,
                                             }}
                                         />
 
@@ -289,12 +292,26 @@ export function ExperienceSection() {
                                                 </div>
 
                                                 <div className="flex flex-col items-end gap-1.5 shrink-0">
-                                                    <Badge
-                                                        variant="outline"
-                                                        className="text-[10px] font-bold border-white/10 text-muted-foreground/50 bg-white/5 tracking-wider"
-                                                    >
-                                                        {exp.type}
-                                                    </Badge>
+                                                    <div className="flex items-center gap-2">
+                                                        {exp.highlight && (
+                                                            <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border"
+                                                                style={{
+                                                                    color: exp.accent,
+                                                                    borderColor: exp.accentBorder,
+                                                                    background: exp.accentBg,
+                                                                }}
+                                                            >
+                                                                <Zap className="w-2.5 h-2.5" />
+                                                                Atual
+                                                            </span>
+                                                        )}
+                                                        <Badge
+                                                            variant="outline"
+                                                            className="text-[10px] font-bold border-border/50 text-muted-foreground/50 bg-muted/30 tracking-wider"
+                                                        >
+                                                            {exp.type}
+                                                        </Badge>
+                                                    </div>
                                                     <div className="flex items-center gap-1 text-[11px] text-muted-foreground/35 font-medium">
                                                         <Calendar className="w-3 h-3" />
                                                         {exp.period}
@@ -325,8 +342,8 @@ export function ExperienceSection() {
                                                         key={tag}
                                                         className="px-2.5 py-1 rounded-lg text-[10px] font-semibold tracking-wide border transition-colors"
                                                         style={{
-                                                            background: `${exp.accent}12`,
-                                                            borderColor: `${exp.accent}28`,
+                                                            background: `${exp.accent}10`,
+                                                            borderColor: `${exp.accent}25`,
                                                             color: exp.accent,
                                                         }}
                                                     >
@@ -347,7 +364,7 @@ export function ExperienceSection() {
                     <a
                         href="mailto:renangd.dev@gmail.com"
                         className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold
-                       text-foreground border border-white/10 bg-white/5
+                       text-foreground border border-border/50 bg-muted/20
                        hover:bg-primary/10 hover:border-primary/40
                        transition-all duration-300 group/cta
                        hover:shadow-[0_0_40px_-10px_rgba(var(--primary),0.35)]"

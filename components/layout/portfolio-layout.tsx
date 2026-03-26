@@ -80,13 +80,12 @@ export function PortfolioLayout({ id }: PortfolioLayoutProps) {
         </div>
       </main>
 
-      {/* Experience / Timeline Section */}
-      <div className="relative z-10" id="experience-section-wrapper">
-        <ExperienceSection />
-      </div>
-
       <div className="relative z-10" id="projects-section">
         <ProjectsSection />
+      </div>
+
+      <div className="relative z-10" id="experience-section-wrapper">
+        <ExperienceSection />
       </div>
 
       <div className="contact-section relative z-10" id="contact-section">
